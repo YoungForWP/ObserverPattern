@@ -15,9 +15,4 @@ public class CustomerA implements Customer {
         System.out.println("CustomerA: I have received that " + product.getColor() + " product is available");
     }
 
-    @Override
-    public boolean isInterestIn(String color) {
-        return product.getColor().equals(color);
-    }
-
 }

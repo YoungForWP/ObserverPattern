@@ -14,12 +14,10 @@ public class Main {
         Customer a = new CustomerA(product);
         Customer b  = new CustomerB(product);
 
-        product.setAmount("red", 1);
-        product.setAmount("black",2);
+        product.setAmount(2);
 
         System.out.println("------Remove customerB-------");
         product.removeCustomer(b);
-        product.setAmount("red", -1);
-        product.setAmount("red", 1);
+        product.setAmount(2);
     }
 }
