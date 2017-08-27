@@ -1,14 +1,13 @@
-package com.wp;
+package com.wp.customer;
 
-class CustomerA implements Customer {
+import com.wp.product.Product;
+
+public class CustomerA implements Customer {
     private Product product;
 
-    CustomerA(Product product) {
+    public CustomerA(Product product) {
         this.product = product;
-    }
-
-    Product getProduct() {
-        return product;
+        product.registerObserver(this);
     }
 
     @Override
