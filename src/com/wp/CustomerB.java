@@ -1,17 +1,23 @@
 package com.wp;
 
-class CustomerB {
+class CustomerB implements Customer {
     private Product product;
 
     CustomerB(Product product) {
         this.product = product;
     }
 
-    Product getProduct() {
+    private Product getProduct() {
         return product;
     }
 
-    void receiveMessage() {
+    @Override
+    public void receiveMessage() {
         System.out.println("CustomerB: I have received that " + product.getColor() + " product is available");
+    }
+
+    @Override
+    public boolean isInterestIn(String color) {
+        return product.getColor().equals(color);
     }
 }

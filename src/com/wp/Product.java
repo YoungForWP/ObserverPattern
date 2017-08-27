@@ -3,11 +3,10 @@ package com.wp;
 import java.util.HashMap;
 import java.util.Map;
 
-class Product {
+public class Product {
     private String color;
     private Map<String, Integer> amount;
-    private CustomerA customerA;
-    private CustomerB customerB;
+    private Customer customer;
 
     Product() {
         amount = new HashMap<>();
@@ -33,34 +32,21 @@ class Product {
 
     private void notify(Integer quantity, Integer originAmount, String color) {
         if (originAmount <= 0 && quantity > 0) {
-            notifyCustomerA(color);
-            notifyCustomerB(color);
+            notifyCustomer(color);
         }
     }
 
-    private void notifyCustomerA(String color) {
-        String customerColor = customerA.getProduct().getColor();
-        if (customerColor.equals(color)) {
-            customerA.receiveMessage();
+    private void notifyCustomer(String color) {
+        if (customer.isInterestIn(color)) {
+            customer.receiveMessage();
         }
     }
 
-    private void notifyCustomerB(String color) {
-        String customerColor = customerB.getProduct().getColor();
-        if (customerColor.equals(color)) {
-            customerB.receiveMessage();
-        }
-    }
-
-    String getColor() {
+    public String getColor() {
         return color;
     }
 
-    void setCustomerA(CustomerA customerA) {
-        this.customerA = customerA;
-    }
-
-    void setCustomerB(CustomerB customerB) {
-        this.customerB = customerB;
+    void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

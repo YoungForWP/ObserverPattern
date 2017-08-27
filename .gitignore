@@ -84,3 +84,6 @@ hs_err_pid*
 
 # End of https://www.gitignore.io/api/java,intellij+all
 ObserverPattern.iml
+.DS_Store
+src/.DS_Store
+src/com/.DS_Store

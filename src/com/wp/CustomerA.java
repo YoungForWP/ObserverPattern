@@ -1,6 +1,6 @@
 package com.wp;
 
-class CustomerA {
+class CustomerA implements Customer {
     private Product product;
 
     CustomerA(Product product) {
@@ -11,8 +11,14 @@ class CustomerA {
         return product;
     }
 
-    void receiveMessage() {
+    @Override
+    public void receiveMessage() {
         System.out.println("CustomerA: I have received that " + product.getColor() + " product is available");
+    }
+
+    @Override
+    public boolean isInterestIn(String color) {
+        return product.getColor().equals(color);
     }
 
 }
