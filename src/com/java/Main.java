@@ -1,8 +1,7 @@
 package com.java;
 
 
-import com.java.customer.CustomerA;
-import com.java.customer.CustomerB;
+import com.java.customer.Customer;
 import com.java.product.Product;
 
 public class Main {
@@ -10,8 +9,11 @@ public class Main {
         Product product = new Product();
         product.setColor("blue");
 
-        CustomerA a = new CustomerA(product);
-        CustomerB b = new CustomerB(product);
+        Customer a = new Customer(product);
+        a.setName("A");
+
+        Customer b = new Customer(product);
+        b.setName("B");
 
         product.setAmount(2);
 
