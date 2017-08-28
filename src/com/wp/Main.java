@@ -17,7 +17,7 @@ public class Main {
         product.setAmount(2);
 
         System.out.println("------Remove customerB-------");
-        product.removeCustomer(b);
+        b.cancelInterest();
         product.setAmount(2);
     }
 }

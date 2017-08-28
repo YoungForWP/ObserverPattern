@@ -31,4 +31,8 @@ public class Client implements Customer {
         System.out.println(this.name + ": I have received that " + product.getColor() + " product is available");
     }
 
+    public void cancelInterest() {
+        product.removeCustomer(this);
+    }
+
 }

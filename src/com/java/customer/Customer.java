@@ -31,4 +31,8 @@ public class Customer implements Observer {
             System.out.println(this.name + ": I have received that " + product.getColor() + " product is available");
         }
     }
+
+    public void cancelInterest() {
+        observable.deleteObserver(this);
+    }
 }

@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println("------Remove customerB-------");
 
-        product.deleteObserver(b);
+        b.cancelInterest();
         product.setAmount(2);
     }
 }
