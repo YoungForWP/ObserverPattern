@@ -20,8 +20,14 @@ public class Product extends Observable {
     }
 
     public void setAmount(Integer amount) {
+        if (checkNotify(amount)) {
+            setChanged();
+            notifyObservers();
+        }
         this.amount = amount;
-        setChanged();
-        notifyObservers();
+    }
+
+    private boolean checkNotify(Integer amount) {
+        return (this.amount == null || this.amount == 0) && amount > 0;
     }
 }

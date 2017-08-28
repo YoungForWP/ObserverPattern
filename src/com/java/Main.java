@@ -15,7 +15,7 @@ public class Main {
         Customer b = new Customer(product);
         b.setName("B");
 
-        product.setAmount(2);
+        product.setAmount(0);
 
         System.out.println("------Remove customerB-------");
 

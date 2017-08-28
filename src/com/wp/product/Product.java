@@ -35,7 +35,14 @@ public class Product implements Commodity {
     }
 
     public void setAmount(Integer amount) {
-        notifyCustomer();
+        if (checkNotify(amount)) {
+            notifyCustomer();
+        }
+        this.amount = amount;
+    }
+
+    private boolean checkNotify(Integer amount) {
+        return (this.amount == null || this.amount == 0) && amount > 0;
     }
 
     public String getColor() {
